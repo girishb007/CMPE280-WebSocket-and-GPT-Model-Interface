@@ -13,12 +13,12 @@ class WebSocketClient:
         master.title("CMPE 280 Assignment - Web Sockets and GPT Models")
 
         self.style = ttk.Style()
-        self.style.configure('TLabel', font=('Arial', 16), background='#b2fab4', foreground='black')
-        self.style.configure('TButton', font=('Arial', 14), relief=tk.FLAT, background='#8cd9a0', foreground='black')
-        self.style.configure('TFrame', background='#b2fab4')
-        self.style.configure('TText', font=('Arial', 12), padding=5, background='#c8f0cc', foreground='black', borderwidth=2, relief="solid")
+        self.style.configure('TLabel', font=('Arial', 16), background='#d1c4e9', foreground='black')
+        self.style.configure('TButton', font=('Arial', 14), relief=tk.FLAT, background='#b39ddb', foreground='black')
+        self.style.configure('TFrame', background='#d1c4e9')
+        self.style.configure('TText', font=('Arial', 12), padding=5, background='#e8eaf6', foreground='black', borderwidth=2, relief="solid")
 
-        self.master.configure(background='#b2fab4')
+        self.master.configure(background='#d1c4e9')
 
         self.label = ttk.Label(master, text="WebSocket Client Interface")
         self.label.pack(pady=20)
@@ -64,7 +64,7 @@ class WebSocketClient:
             for i in range(1, 10001):
                 if not self.running:
                     break
-                await websocket.send("Request [" + str(i) + "] Response recived!")
+                await websocket.send("Request [" + str(i) + "] Hello world!")
                 message = await websocket.recv()
                 self.log['state'] = tk.NORMAL
                 self.log.insert(tk.END, f"Received: {message}\n")
